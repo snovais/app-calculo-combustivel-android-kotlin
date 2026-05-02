@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Declaração padrão do XML que define a versão e a codificação dos caracteres -->
-
-<!-- O LinearLayout organiza os elementos um embaixo do outro (vertical) ou lado a lado (horizontal) -->
-<!-- Ocupa toda a largura disponível da tela do celular -->
-<!-- Ocupa toda a altura disponível da tela do celular -->
-<!-- Empilha os componentes de cima para baixo, como uma pilha de blocos -->
-<!-- Cria um "respiro" interno de 20dp nas bordas, evitando que o conteúdo grude nas quinas da tela -->
-<!-- ATRAÇÃO: Puxa todos os elementos filhos para o centro exato (horizontal e vertical) da tela -->
+<!-- A declaração acima DEVE ser sempre a primeira linha do arquivo -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -14,30 +7,25 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center">
-    <!-- TextView: Usado apenas para exibir textos fixos (rótulos ou títulos) -->
-    <!-- O texto que aparecerá para o usuário -->
-    <!-- Tamanho da fonte. 'sp' é usado para textos pois respeita a acessibilidade do sistema -->
-    <!-- Deixa o título em negrito para dar destaque visual -->
-    <!-- Empurra o próximo componente 30dp para baixo, criando um espaço -->
-    <!-- EditText: Campo onde o usuário clica e digita informações -->
+
+    <!-- TÍTULO: TextView para exibição de texto estático -->
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Calculadora de Viagem"
-    android:textSize="24sp"
-    android:textStyle="bold"
-    android:layout_marginBottom="30dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Viagem"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp" />
 
+    <!-- ENTRADA: Distância (ID: editDistancia) -->
     <EditText
-    android:id="@+id/editDistancia"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Distância total (km)"
-    android:inputType="numberDecimal" />
-    <!-- RG do componente: é por este nome que o Kotlin o encontrará via findViewById -->
-    <!-- Texto de ajuda que some quando o usuário começa a digitar -->
-    <!-- REGRAS: Abre o teclado numérico com suporte a pontos/vírgulas (decimais) -->
+        android:id="@+id/editDistancia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Distância total (km)"
+        android:inputType="numberDecimal" />
 
+    <!-- ENTRADA: Preço do Litro (ID: editPrecoLitro) -->
     <EditText
         android:id="@+id/editPrecoLitro"
         android:layout_width="match_parent"
@@ -46,6 +34,7 @@
         android:inputType="numberDecimal"
         android:layout_marginTop="10dp" />
 
+    <!-- ENTRADA: Consumo (ID: editConsumo) -->
     <EditText
         android:id="@+id/editConsumo"
         android:layout_width="match_parent"
@@ -53,9 +42,8 @@
         android:hint="Consumo Médio (km/l)"
         android:inputType="numberDecimal"
         android:layout_marginTop="10dp" />
-        <!-- layout_marginTop cria um espaço de 10dp em relação ao campo de cima -->
-        <!-- Button: Componente interativo de clique -->
 
+    <!-- AÇÃO: Botão para disparar o cálculo (ID: btnCalcular) -->
     <Button
         android:id="@+id/btnCalcular"
         android:layout_width="match_parent"
@@ -63,7 +51,7 @@
         android:text="Calcular Custo"
         android:layout_marginTop="20dp" />
 
-    <!-- TextView Final: Destinado a mostrar a resposta do processamento feito no Kotlin -->
+    <!-- RESULTADO: Exibição do valor calculado (ID: txtResultado) -->
     <TextView
         android:id="@+id/txtResultado"
         android:layout_width="wrap_content"
@@ -74,7 +62,5 @@
         android:textColor="#2E7D32"
         android:textStyle="bold"
         android:textAlignment="center" />
-        <!-- Define a cor do texto. Aqui usamos um tom de verde para simbolizar dinheiro/custo -->
-        <!-- Garante que se o texto quebrar em duas linhas, elas fiquem alinhadas pelo centro -->
 
 </LinearLayout>

@@ -43,10 +43,3 @@ PASSO C: PROCESSAMENTO
 - res/values: Onde ficam as cores e textos fixos.
 - Gradle Scripts: Os "bastidores" que constroem e compilam o app.
 
-5. DICA DE OURO DO PROFESSOR
-------------------------------------------------------------
-Sempre que o app der erro de "R" ou "Unresolved reference",
-tente o comando: Build > Clean Project e depois Build > Rebuild Project.
-Isso limpa os arquivos temporários e força o Android a reconhecer
-novamente todos os seus componentes!
-============================================================
