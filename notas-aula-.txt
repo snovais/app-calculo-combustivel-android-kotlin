@@ -1,0 +1,52 @@
+============================================================
+GUIA RÁPIDO: ANATOMIA DE UM APP ANDROID (KOTLIN)
+Professor: Sérgio Novais
+============================================================
+
+1. AS DUAS FACES DO APP
+------------------------------------------------------------
+Para criar uma tela, precisamos de dois arquivos trabalhando juntos:
+- O ARQUIVO XML (O Corpo): Define ONDE as coisas ficam (botões, textos, campos).
+- O ARQUIVO KOTLIN (A Mente): Define O QUE o app faz quando você interage com ele.
+
+2. O ARQUIVO VISUAL (activity_main.xml)
+------------------------------------------------------------
+Principais componentes utilizados:
+- LinearLayout: O container que "empilha" os elementos (vertical).
+- gravity="center": O "imã" que puxa tudo para o meio da tela.
+- EditText: Campo de entrada de dados (onde o usuário digita).
+- Button: O gatilho para disparar uma ação.
+- TextView: Campo usado para exibir mensagens ou resultados.
+- ID (@+id/...): O "nome" ou "RG" do componente para o código o encontrar.
+
+3. O ARQUIVO DE LÓGICA (MainActivity.kt)
+------------------------------------------------------------
+O passo a passo que o código executa:
+
+PASSO A: MAPEAMENTO (findViewById)
+O código "pesca" os componentes do XML pelo ID para poder controlá-los.
+
+PASSO B: ESCUTA (setOnClickListener)
+O app fica em "modo de espera" aguardando o clique no botão.
+
+PASSO C: PROCESSAMENTO
+1. Captura: Lê o que foi digitado (text.toString()).
+2. Conversão: Transforma texto em número (toDouble()) para fazer contas.
+3. Lógica: Realiza o cálculo matemático (Distância / Consumo * Preço).
+4. Saída: Devolve o resultado formatado para a tela (txtResultado.text).
+
+4. ESTRUTURA DE PASTAS (ONDE ESTÁ O QUÊ?)
+------------------------------------------------------------
+- manifests: O "RG" do App (AndroidManifest.xml).
+- kotlin+java: Onde mora o seu código fonte (.kt).
+- res/layout: Onde moram as suas telas (.xml).
+- res/values: Onde ficam as cores e textos fixos.
+- Gradle Scripts: Os "bastidores" que constroem e compilam o app.
+
+5. DICA DE OURO DO PROFESSOR
+------------------------------------------------------------
+Sempre que o app der erro de "R" ou "Unresolved reference",
+tente o comando: Build > Clean Project e depois Build > Rebuild Project.
+Isso limpa os arquivos temporários e força o Android a reconhecer
+novamente todos os seus componentes!
+============================================================
